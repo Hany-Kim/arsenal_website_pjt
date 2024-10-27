@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARSENAL FC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .mainnews {
+            margin: 5px;
+        }
+        .mainnews>div {
+            font-family: cursive;
+            text-align: left;
+            background: red;
+            color: white;
+        }
+        #slideshow {
+            overflow: hidden;
+            width: 100%;
+            height: 50%;
+            margin: 0 auto;
+            background: white;
+        }
+        .slide-wrapper {
+            width: 800%;
+            animation: slide 40s ease infinite;
+        }
+        .slide {
+            float: left;
+            width: 12.5%;
+        }
+        .slide {
+            color: #000;
+            text-align: left;
+            font-size: 10em;
+        }
+        #past_match a {
+            text-decoration: none;
+            color: balck;
+        }
+        #past_match {
+            font-family:serif;
+            text-align: center;
+            transition: background 2s;
+            margin: 5px;
+        }
+        #past_match #h3 {
+            background: red;
+            text-align: left;
+            color: white;
+            font-family: cursive;
+        }
+        #past_match h3 {
+            font-family: cursive;
+        }
+        #past_match hr {
+            border-color: red;
+            background: red;
+        }
+        #past_match strong {
+            font-size: 60px;
+            color: red;
+        }
+        #past_match #home {
+            font-size: 80px;
+            color: red;
+        }
+        #past_match #away {
+            font-size: 80px;
+            color: black;
+        }
+        #past_match #nv {
+            text-align: left;
+            font-family: fantasy;
+        }
+        #past_match:hover {
+            background: yellow;
+        }
+        #past_match #nv span:hover {
+            color: red;
+        }
+        #past_match a:link {
+            text-decoration: none;
+            color: black;
+        }
+        #past_match a:visited {
+            text-decoration: none;
+            color: black;
+        }
+        #past_match a:active {
+            text-decoration: none;
+            color: black;
+        }
+        
+        #next_match span {
+            color: white;
+        }
+        #next_match {
+            font-family:serif;
+            text-align: center;
+            background: #151D2D;
+            color: white;
+            margin: 5px;
+        }
+        #next_match h3 {
+            font-family: cursive;
+        }
+        #next_match #head {
+            background: red;
+            text-align: left;
+            color: white;
+            font-family: cursive;
+        }
+        #next_match hr {
+            border-color: white;
+            background: white;
+        }
+        #next_match h2 {
+            font-size: 21px;
+            text-align: center;
+        }
+        #next_match span {
+            font-family: fantasy;
+            text-align: left;
+        }
+        #next_match strong {
+            font-family:serif;
+            font-size: 70px;
+        }
+        #next_match a {
+            text-decoration: none;
+            color: white;
+            transition: color 2s;
+        }
+        #next_match #nv {
+            text-align: left;
+        }
+        #next_match a:hover {
+            color: red;
+        }
+        #next_match #nv span:hover {
+            color: red;
+        }
+        
+        #ranking {
+            margin: 5px;
+        }
+        #ranking h3 {
+            font-family: cursive;
+            text-align: left;
+            background: red;
+            color: white;
+        }
+        #ranking table {
+            width: 100%;
+            text-align: center;
+            border-color: red;
+            border: red ;
+        }
+        #ranking span {
+            color: red;
+        }
+        #ranking a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        #Golden_Boot {
+            margin: 5px;
+        }
+        #Golden_Boot h3 {
+            font-family: cursive;
+            text-align: left;
+            background: red;
+            color: white;
+        }
+        .title {
+            border-top-right-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+        @-webkit-keyframes slide {
+            0% {margin-left: 0%;}
+            6.6% {margin-left: -100%;}
+            13.2% {margin-left: -100%;}
+            19.8% {margin-left: -200%;}
+            26.4% {margin-left: -200%;}
+            33% {margin-left: -300%;}
+            39.6% {margin-left: -300%;}
+            46.2% {margin-left: -400%;}
+            52.8% {margin-left: -400%;}
+            59.4% {margin-left: -500%;}
+            66% {margin-left: -500%;}
+            72.6% {margin-left: -600%;}
+            79.2% {margin-left: -600%;}
+            85.8% {margin-left: -700%;}
+            92.4% {margin-left: -700%;}
+            100% {margin-left: 0%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "ars_main.html"><img src="img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>ARSENAL FC</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="ars_intro/ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="ars_intro/ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="ars_intro/ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="ars_intro/ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a></li>
+        </ul>
+    </nav>
+    <div class="col-6 col-s-12">
+        <div class="mainnews">
+            <div><h3><br>&nbsp;Main News<br><br></h3></div>
+            <div id="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide"><a href="https://www.arsenal.com/news/join-us-arsenal-quiz-night-legend" target="_blank"><img src="img/ars_mainnews_3.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/rest-peace-jose-antonio-reyes" target="_blank"><img src="img/ars_mainnews_2.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/fixture/arsenal/2019-May-29/arsenal-1-4-chelsea-match-report" target="_blank"><img src="img/ars_mainnews_4.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/emerys-baku-press-conference-full-transcript" target="_blank"><img src="img/ars_mainnews_5.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/preparations-continue-baku-picture-special" target="_blank"><img src="img/ars_mainnews_6.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/interview-michael-thomas-night-89" target="_blank"><img src="img/ars_mainnews_7.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/media-watch-europa-league-final-special" target="_blank"><img src="img/ars_mainnews_8.jpg" width="100%"></a></div>
+                
+                <div class="slide"><a href="https://www.arsenal.com/news/advice-fans-attending-europa-league-final" target="_blank"><img src="img/ars_mainnews.jpg" width="100%"></a></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-6 col-s-12">
+        <div id="ranking">
+                <div><h3><br>&nbsp;PREMIER LEAGUE - BIG 6 Club Ranking<br><br></h3></div>
+            <a href="ars_match/ars_match_ranking.html">
+            <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>팀</th> 
+                        <th>경기수</th>
+                        <th>승점</th>
+                        <th>승</th>
+                        <th>무</th>
+                        <th>패</th>
+                        <th>득</th>
+                        <th>실</th>
+                        <th>골득실</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="img/teamlogo/mc.jpg" width="90" height="75"></td>
+                        <td>38</td>
+                        <td><span>98</span></td>
+                        <td>32</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>95</td>
+                        <td>23</td>
+                        <td>72</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="img/teamlogo/LIV.jpg" width="90" height="75"></td>
+                        <td>38</td>
+                        <td><span>97</span></td>
+                        <td>30</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>89</td>
+                        <td>22</td>
+                        <td>67</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="img/teamlogo/chelsea_teamlogo.jpg" width="75" height="75"></td>
+                        <td>38</td>
+                        <td><span>72</span></td>
+                        <td>21</td>
+                        <td>9</td>
+                        <td>8</td>
+                        <td>63</td>
+                        <td>39</td>
+                        <td>24</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="img/teamlogo/TOT.jpg" width="90" height="75"></td>
+                        <td>38</td>
+                        <td><span>71</span></td>
+                        <td>23</td>
+                        <td>2</td>
+                        <td>13</td>
+                        <td>67</td>
+                        <td>39</td>
+                        <td>28</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="img/teamlogo/ars_teamlogo_2.jpg" width="75" height="75"></td>
+                        <td>38</td>
+                        <td><span>70</span></td>
+                        <td>21</td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>73</td>
+                        <td>51</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="img/teamlogo/mu_teamlogo.jpg" width="75" height="75"></td>
+                        <td>38</td>
+                        <td><span>66</span></td>
+                        <td>19</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>65</td>
+                        <td>54</td>
+                        <td>11</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-3 col-s-6">
+        <div id="past_match">
+            <div id="h3"><h3><br>&nbsp;Past Match<br><br></h3></div>
+            <a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243"><div>
+            <h3>Web May 29 - 20:00<br>Europa League</h3><hr>
+            <img src="img/teamlogo/ars_teamlogo_2.jpg" width="80" style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-left-radius: 100px; border-bottom-right-radius: 100px;"> &nbsp;<span id="home">1</span><strong>-</strong> <span id="away">4</span>&nbsp;<img src="img/teamlogo/chelsea_teamlogo.jpg" width="80" style="border-radius: 40px;"><br><br><hr>
+                <div id="nv"><a href="https://www.arsenal.com/fixture/arsenal/2019-may-29/chelsea#!match-news" target="_blank"><span>&nbsp;NEWS&amp;VIDEO ></span></a></div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-3 col-s-6">
+        <div id="next_match">
+            <div id="head"><h3><br>&nbsp;Next Match<br><br></h3></div>
+            <a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank">
+            <div>
+            <h3>Sat July 6 - 15:00<br>Meadow Park</h3><hr>
+            <h2><img src="img/teamlogo/BW.jpg" width="80" style="border-radius: 40px;">&nbsp;&nbsp;<strong>V</strong>&nbsp;&nbsp;<img src="img/teamlogo/ars_teamlogo_3.jpg" width="68" style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-left-radius: 100px; border-bottom-right-radius: 100px;"></h2><hr>
+            <div id="nv"><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><span>&nbsp;NEWS&amp;VIDEO ></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.arsenal.com/tickets/arsenal/2019-Jul-06/boreham-wood" target="_blank"><span>TICKET Info ></span></a>
+        </div>
+        </div>
+        </a>
+        </div>
+    </div>
+    <div class="col-6 col-s-12">
+        <div id="Golden_Boot">
+            <div><h3><br>&nbsp;PREMIER LEAGUE GOLDEN BOOTS<br><br></h3></div>
+                <img src="img/GB.jpg" width="210" height="250"><img src="img/arsenal_player/Aubameyang_goldenboot.jpg" width="530" height="250"></div></div>
+    
+</body>
+</html>

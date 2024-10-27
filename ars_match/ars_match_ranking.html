@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Ranking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 13px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 136px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        #item ul {
+            display: block;
+            list-style: none;
+            width: 90%
+        }
+        #item ul li {
+            float: top;
+        }
+        #ranking {
+            margin: 5px;
+        }
+        #ranking table {
+            width: 100%;
+            text-align: center;
+            border-color: red;
+            border: red ;
+            font-family:sans-serif;
+        }
+        #ranking span {
+            color: red;
+        }
+        #el strong {
+            font-size: 13px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Ranking</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="../ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="../ars_intro/ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="../ars_intro/ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="../ars_intro/ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="../ars_intro/ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "../ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="../ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="../ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/" target="_blank"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="../ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="col-2 col-s-2">
+        <div class="sidebar">
+        <ul>
+            <li><a href="ars_match_ranking.html"><strong>구단순위</strong></a></li>
+            <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><strong>다음경기</strong></a></li>
+            <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><strong>지난경기</strong></a></li>
+            <li><a href="https://www.eticketing.co.uk/arsenal/" target="_blank"><strong>티케팅</strong></a></li>
+        </ul>
+        </div>
+    </nav>
+    <div>
+        <div id="content">
+            <h1>리그 성적</h1>
+            <hr>
+            <div id="item">
+                <div>
+                    <ul>
+                        <li style="float: left"><a href="#pl"><img src="../img/PREMIER.jpg"></a></li>
+                        <li><a href="#el"><img src="../img/EUROPA.jpg"></a></li>
+                    </ul>
+                </div>
+                <div class="col-9 col-s-12">
+                    <div id="pl">
+                        <div id="ranking">
+                            <h2>18/19시즌 Premier League</h2>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>순위</th>
+                                        <th>팀</th> 
+                                        <th>경기수</th>
+                                        <th>승점</th>
+                                        <th>승</th>
+                                        <th>무</th>
+                                        <th>패</th>
+                                        <th>득</th>
+                                        <th>실</th>
+                                        <th>골득실</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img src="../img/teamlogo/mc.jpg" width="90" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>98</span></td>
+                                        <td>32</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                        <td>95</td>
+                                        <td>23</td>
+                                        <td>72</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><img src="../img/teamlogo/LIV.jpg" width="90" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>97</span></td>
+                                        <td>30</td>
+                                        <td>7</td>
+                                        <td>1</td>
+                                        <td>89</td>
+                                        <td>22</td>
+                                        <td>67</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>72</span></td>
+                                        <td>21</td>
+                                        <td>9</td>
+                                        <td>8</td>
+                                        <td>63</td>
+                                        <td>39</td>
+                                        <td>24</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><img src="../img/teamlogo/TOT.jpg" width="90" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>71</span></td>
+                                        <td>23</td>
+                                        <td>2</td>
+                                        <td>13</td>
+                                        <td>67</td>
+                                        <td>39</td>
+                                        <td>28</td>
+                                    </tr>
+                                </tbody>
+                                <tbody style="background: pink">
+                                    <tr>
+                                        <td>5</td>
+                                        <td style="background: white"><img src="../img/teamlogo/ars_teamlogo_2.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>70</span></td>
+                                        <td>21</td>
+                                        <td>7</td>
+                                        <td>10</td>
+                                        <td>73</td>
+                                        <td>51</td>
+                                        <td>22</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><img src="../img/teamlogo/mu_teamlogo.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>66</span></td>
+                                        <td>19</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>65</td>
+                                        <td>54</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td><img src="../img/teamlogo/WOLVES.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>57</span></td>
+                                        <td>16</td>
+                                        <td>9</td>
+                                        <td>13</td>
+                                        <td>47</td>
+                                        <td>46</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td><img src="../img/teamlogo/EVT.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>54</span></td>
+                                        <td>15</td>
+                                        <td>9</td>
+                                        <td>14</td>
+                                        <td>54</td>
+                                        <td>46</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td><img src="../img/teamlogo/LES.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>52</span></td>
+                                        <td>15</td>
+                                        <td>7</td>
+                                        <td>16</td>
+                                        <td>51</td>
+                                        <td>48</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td><img src="../img/teamlogo/WES.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>52</span></td>
+                                        <td>15</td>
+                                        <td>7</td>
+                                        <td>16</td>
+                                        <td>52</td>
+                                        <td>55</td>
+                                        <td>-3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td><img src="../img/teamlogo/WAT.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>50</span></td>
+                                        <td>14</td>
+                                        <td>8</td>
+                                        <td>16</td>
+                                        <td>52</td>
+                                        <td>59</td>
+                                        <td>-7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td><img src="../img/teamlogo/CRY.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>49</span></td>
+                                        <td>14</td>
+                                        <td>7</td>
+                                        <td>17</td>
+                                        <td>51</td>
+                                        <td>53</td>
+                                        <td>-2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td><img src="../img/teamlogo/NEW.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>45</span></td>
+                                        <td>12</td>
+                                        <td>9</td>
+                                        <td>17</td>
+                                        <td>42</td>
+                                        <td>48</td>
+                                        <td>-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td><img src="../img/teamlogo/BON.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>45</span></td>
+                                        <td>13</td>
+                                        <td>6</td>
+                                        <td>19</td>
+                                        <td>56</td>
+                                        <td>70</td>
+                                        <td>-14</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td><img src="../img/teamlogo/BUN.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>40</span></td>
+                                        <td>11</td>
+                                        <td>7</td>
+                                        <td>20</td>
+                                        <td>45</td>
+                                        <td>68</td>
+                                        <td>-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td><img src="../img/teamlogo/SOU.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>39</span></td>
+                                        <td>9</td>
+                                        <td>12</td>
+                                        <td>17</td>
+                                        <td>45</td>
+                                        <td>65</td>
+                                        <td>-20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td><img src="../img/teamlogo/BRI.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>36</span></td>
+                                        <td>9</td>
+                                        <td>9</td>
+                                        <td>20</td>
+                                        <td>35</td>
+                                        <td>60</td>
+                                        <td>-25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td><img src="../img/teamlogo/CAR.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>34</span></td>
+                                        <td>10</td>
+                                        <td>4</td>
+                                        <td>24</td>
+                                        <td>34</td>
+                                        <td>69</td>
+                                        <td>-35</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td><img src="../img/teamlogo/FUL.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>26</span></td>
+                                        <td>7</td>
+                                        <td>5</td>
+                                        <td>26</td>
+                                        <td>34</td>
+                                        <td>81</td>
+                                        <td>-47</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td><img src="../img/teamlogo/HER.jpg" width="75" height="75"></td>
+                                        <td>38</td>
+                                        <td><span>16</span></td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>28</td>
+                                        <td>22</td>
+                                        <td>76</td>
+                                        <td>-54</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-s-12">
+                    <div id="el">
+                        <div id="ranking">
+                        <h2>18/19시즌 Europa League</h2>
+                            <details>
+                                <summary><h3>※조별리그</h3></summary>
+                            <table border="1">
+                                <tr>
+                                    <th>조</th>
+                                    <th>순위</th>
+                                    <th>팀명</th>
+                                    <th>경기</th>
+                                    <th>승점</th>
+                                    <th>득실</th>
+                                    <th>조</th>
+                                    <th>순위</th>
+                                    <th>팀명</th>
+                                    <th>경기</th>
+                                    <th>승점</th>
+                                    <th>득실</th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="8">A조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/LEV.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>13</span></td>
+                                    <td rowspan="2">7</td>
+                                    <td rowspan="8">B조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/SAL.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>18</span></td>
+                                    <td rowspan="2">11</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>바이엘 04<br>레버쿠젠</strong></td>
+                                    <td><strong>FC 레드불<br>잘츠부르크</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/FCZ.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">1</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/CEL.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>9</span></td>
+                                    <td rowspan="2">-2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 취리히</strong></td>
+                                    <td><strong>셀틱 FC</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/AEK.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>5</span></td>
+                                    <td rowspan="2">-6</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/LEI.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">1</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>AEK 라르나카</strong></td>
+                                    <td><strong>RB 라이프치히</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/NOK.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>4</span></td>
+                                    <td rowspan="2">-2</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/RBK.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>1</span></td>
+                                    <td rowspan="2">-10</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PFC<br>루도고레츠<br>라즈그라드</strong></td>
+                                    <td><strong>로젠보리<br>트론하임 BK</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="8">C조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/ZEI.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>11</span></td>
+                                    <td rowspan="2">1</td>
+                                    <td rowspan="8">D조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/DIN.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>14</span></td>
+                                    <td rowspan="2">8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 제니트 상트<br>페테르부르크</strong></td>
+                                    <td><strong>GNK 디나모<br>자그레브</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/SLA.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">1</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/FEN.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>8</span></td>
+                                    <td rowspan="2">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SK 슬라비아<br>프라하</strong></td>
+                                    <td><strong>페네르바체<br>SK</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/GIR.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">0</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/SPA.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">-3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 지롱댕<br>드 보르도</strong></td>
+                                    <td><strong>FC 스파르타크<br>트르나바</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/KOB.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>5</span></td>
+                                    <td rowspan="2">-2</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/SCA.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>3</span></td>
+                                    <td rowspan="2">-5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 코펜하겐</strong></td>
+                                    <td><strong>RSC<br>안더레흐트</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="8">E조</td>
+                                    <td rowspan="2" style="background-color: pink">1</td>
+                                    <td><img src="../img/teamlogo/ARS.jpg" width="90" height="75"></td>
+                                    <td rowspan="2" style="background-color: pink">6</td>
+                                    <td rowspan="2" style="background-color: pink"><span>16</span></td>
+                                    <td rowspan="2" style="background-color: pink">10</td>
+                                    <td rowspan="8">F조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/BET.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>12</span></td>
+                                    <td rowspan="2">5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>아스날 FC</strong></td>
+                                    <td><strong>레알 베티스</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/SCP.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>13</span></td>
+                                    <td rowspan="2">10</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/OLY.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>스포르팅 CP</strong></td>
+                                    <td><strong>올림피아코스 FC</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/BOP.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>3</span></td>
+                                    <td rowspan="2">-9</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/ACM.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 보르스클라<br>폴타바</strong></td>
+                                    <td><strong>AC 밀란</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/KAR.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>3</span></td>
+                                    <td rowspan="2">-11</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/DUD.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>1</span></td>
+                                    <td rowspan="2">-13</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>카라바흐 FK</strong></td>
+                                    <td><strong>F91 뒤틀랑주</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="8">G조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/CVF.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">7</td>
+                                    <td rowspan="8">H조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/AIT.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>18</span></td>
+                                    <td rowspan="2">12</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>비야레알 CF</strong></td>
+                                    <td><strong>아인트라흐트<br>프랑크푸르트</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/RAP.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">-3</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/LAZ.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>9</span></td>
+                                    <td rowspan="2">-2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SK 라피드 빈</strong></td>
+                                    <td><strong>SS 라치오</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/RAN.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>6</span></td>
+                                    <td rowspan="2">0</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/APO.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>레인저스 FC</strong></td>
+                                    <td><strong>아폴론 리마솔<br>FC</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/MOS.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>5</span></td>
+                                    <td rowspan="2">-4</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/DRO.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>1</span></td>
+                                    <td rowspan="2">-10</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 스파르타크<br>모스크바</strong></td>
+                                    <td><strong>올림피크 드<br>마르세유</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="8">I조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/GEN.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>11</span></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="8">J조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/SEB.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>12</span></td>
+                                    <td rowspan="2">12</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KRC 헹크</strong></td>
+                                    <td><strong>세비야 FC</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/MAL.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>9</span></td>
+                                    <td rowspan="2">1</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/KRA.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>12</span></td>
+                                    <td rowspan="2">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>말뫼 FF</strong></td>
+                                    <td><strong>FC<br>크라스노다르</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/BJK.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">-2</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/STA.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>10</span></td>
+                                    <td rowspan="2">-2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>배식타시 JK</strong></td>
+                                    <td><strong>스탕다르<br>리에주</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/SAR.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>5</span></td>
+                                    <td rowspan="2">-5</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/AKH.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>1</span></td>
+                                    <td rowspan="2">-10</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>사릅스보르그<br>08 FF</strong></td>
+                                    <td><strong>악히사르<br>벨레디예스포르</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="8">K조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/DINAMO.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>11</span></td>
+                                    <td rowspan="2">3</td>
+                                    <td rowspan="8">J조</td>
+                                    <td rowspan="2">1</td>
+                                    <td><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>16</span></td>
+                                    <td rowspan="2">9</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 디나모<br>키에프</strong></td>
+                                    <td><strong>첼시 FC</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/STADE.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>9</span></td>
+                                    <td rowspan="2">-1</td>
+                                    <td rowspan="2">2</td>
+                                    <td><img src="../img/teamlogo/BAT.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>9</span></td>
+                                    <td rowspan="2">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>스타드 렌 FC</strong></td>
+                                    <td><strong>바테 보리소프</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/AST.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>8</span></td>
+                                    <td rowspan="2">0</td>
+                                    <td rowspan="2">3</td>
+                                    <td><img src="../img/teamlogo/VID.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>7</span></td>
+                                    <td rowspan="2">-2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FC 아스타나</strong></td>
+                                    <td><strong>비데오톤 FC<br>페헤르바르</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/JAB.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>5</span></td>
+                                    <td rowspan="2">-2</td>
+                                    <td rowspan="2">4</td>
+                                    <td><img src="../img/teamlogo/NAO.jpg" width="90" height="75"></td>
+                                    <td rowspan="2">6</td>
+                                    <td rowspan="2"><span>3</span></td>
+                                    <td rowspan="2">-7</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FK 야블로네츠</strong></td>
+                                    <td><strong>PAOK FC</strong></td>
+                                </tr>
+                            </table>
+                        </details>
+                        <h3>※토너먼트</h3>
+                            <div>
+                            <div id="tnm">
+                            <table border="1">
+                                <tr>
+                                    <th>32강</th>
+                                    <th>16강</th>
+                                    <th>8강</th>
+                                    <th>4강</th>
+                                    <th>결승</th>
+                                    <th>우승</th>
+                                    <th>결승</th>
+                                    <th>4강</th>
+                                    <th>8강</th>
+                                    <th>16강</th>
+                                    <th>32강</th>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/VIC.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/DIN.jpg" width="60"><br> 1차 2 : <span>1</span><br>2차 <span>3</span> : 0</td>
+                                    <td rowspan="2" style="background-color: red"></td>
+                                    <td rowspan="5" style="background-color: red"></td>
+                                    <td rowspan="6" style="background-color: red"></td>
+                                    <td rowspan="16"><img src="../img/EUROPA_TR.jpg" width="80"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="80" height="80"><br><b><i style="color: red;">우승!</i></b><br>첼시 FC<br><span>4</span> : 1</td>
+                                    <td rowspan="6" style="background-color: red"></td>
+                                    <td rowspan="5" style="background-color: red"></td>
+                                    <td rowspan="2" style="background-color: red"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/STADE.jpg" width="60"><br>1차 <span>3</span> : 3<br>2차 1 : <span>3</span></td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/STADE.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/DIN.jpg" width="50"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/BET.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/GAL.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/BEN.jpg" width="60"><br>1차 1 : <span>2</span><br>2차 <span>0</span> : 0</td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/BEN.jpg" width="70"><br>1차 1 : <span>0</span><br>2차 <span>3</span> : 0</td>
+                                    <td rowspan="2" style="border-bottom: none; background-color: pink; font-size: 12px;"><img src="../img/teamlogo/ARS.jpg" width="70" style="border-top-left-radius: 130px; border-top-right-radius: 130px; border-bottom-left-radius: 250px; border-bottom-right-radius: 250px;"><br>1차 3 : <span>1</span><br>2차 <span>3</span> : 0</td>
+                                    <td rowspan="2" style="border-top: none; background-color: pink; font-size: 12px;"><img src="../img/teamlogo/ARS.jpg" width="60" style="border-top-left-radius: 130px; border-top-right-radius: 130px; border-bottom-left-radius: 250px; border-bottom-right-radius: 250px;"><br>1차 1 : <span>0</span><br>2차<span>3</span> : 0</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/BAT.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/BEN.jpg" width="50"></td>
+                                    <td style="border-top: none; background-color: pink"><img src="../img/teamlogo/ARS.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/WAX.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/AIT.jpg" width="60"><br>1차 2 : <span>2</span><br>2차 <span>4</span> : 1</td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/AIT.jpg" width="70"><br>1차 <span>0</span> : 0<br>2차 0 : <span>1</span></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/NAP.jpg" width="70"><br>1차 <span>3</span> : 0<br>2차 3 : <span>1</span></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/SAL.jpg" width="60"><br>1차 2 : <span>1</span><br>2차 <span>4</span> : 0</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/BRU.jpg" width="50"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/AIT.jpg" width="50"></td>
+                                    <td rowspan="3" style="border-bottom: none"><img src="../img/teamlogo/AIT.jpg" width="80"><br>1차 4 : <span>2</span><br>2차 <span>2</span> : 0</td>
+                                    <td rowspan="3" style="border-bottom: none; background-color: pink"><img src="../img/teamlogo/ARS.jpg" width="80" style="border-top-left-radius: 130px; border-top-right-radius: 130px; border-bottom-left-radius: 250px; border-bottom-right-radius: 250px;"><br>1차 <span>2</span> : 0<br>2차 0 : <span>1</span></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/SAL.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/RAP.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/INT.jpg" width="60"><br>1차 0 : <span>1</span><br>2차 <span>4</span> : 0</td>
+                                    <td rowspan="4" style="background-color: red"></td>
+                                    <td rowspan="4"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="70"><br>1차 1 : <span>1</span><br>2차 <span>1</span> : 1<br><i style="font-size: 12px;">(PK <span>4</span> : 3)</i></td>
+                                    <td rowspan="4" style="background-color: pink"><img src="../img/teamlogo/ARS.jpg" width="90"  style="border-top-left-radius: 130px; border-top-right-radius: 130px; border-bottom-left-radius: 250px; border-bottom-right-radius: 250px;"><br>1차 <span>3</span> : 1<br>2차 2 : <span>4</span></td>
+                                    <td rowspan="4" style="background-color: red"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/NAP.jpg" width="60"><br>1차 1 : <span>3</span><br>2차 <span>2</span> : 0</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/FCZ.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/INT.jpg" width="50"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/NAP.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/LAZ.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/SEB.jpg" width="60"><br>1차 0 : <span>1</span><br>2차 <span>2</span> : 0</td>
+                                    <td rowspan="3" style="border-top: none"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="60"><br>1차 0 : <span>1</span><br>2차 <span>4</span> : 3</td>
+                                    <td rowspan="3" style="border-top: none"><img src="../img/teamlogo/VAL.jpg" width="80"><br>1차 1 : <span>3</span><br>2차 <span>2</span> : 0</td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/ZEI.jpg" width="60"><br>1차 1 : <span>0</span><br>2차 <span>3</span> : 1</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/FEN.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/SEB.jpg" width="50"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/ZEI.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/SLA.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/SLA.jpg" width="60"><br>1차 <span>0</span> : 0<br>2차 1 : <span>4</span></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/SLA.jpg" width="70"><br>1차 2 : <span>2</span><br>2차 <span>4</span> : 3</td>
+                                    <td rowspan="6" style="background-color: red"></td>
+                                    <td rowspan="6" style="background-color: red"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/CVF.jpg" width="70"><br>1차 1 : <span>3</span><br>2차 <span>2</span> : 1</td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/CVF.jpg" width="60"><br>1차 0 : <span>1</span><br>2차 <span>1</span> : 1</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/SCP.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/GEN.jpg" width="50"></td>
+                                    <td rowspan="5" style="background-color: red"></td>
+                                    <td rowspan="5" style="background-color: red"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/CVF.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/MAL.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="40"><br>1차 1 : <span>2</span><br>2차 <span>3</span> : 0</td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="50"><br>1차 <span>3</span> : 0<br>2차 0 : <span>5</span></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/VAL.jpg" width="70"><br>1차 <span>2</span> : 1<br>2차 1 : <span>1</span></td>
+                                    <td rowspan="2" style="border-bottom: none; font-size: 12px;"><img src="../img/teamlogo/VAL.jpg" width="60"><br>1차 0 : <span>2</span><br>2차 <span>1</span> : 0</td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/CEL.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/chelsea_teamlogo.jpg" width="30"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/VAL.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/OLY.jpg" width="50"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/DINAMO.jpg" width="60"><br>1차 2 : <span>2</span><br>2차 <span>1</span> : 0</td>
+                                    <td rowspan="2" style="background-color: red"></td>
+                                    <td rowspan="2" style="background-color: red"></td>
+                                    <td rowspan="2" style="border-top: none; font-size: 12px;"><img src="../img/teamlogo/KRA.jpg" width="60"><br>1차 <span>0</span> : 0<br>2차 1 : <span>1</span></td>
+                                    <td style="border-bottom: none"><img src="../img/teamlogo/KRA.jpg" width="50"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none"><img src="../img/teamlogo/DINAMO.jpg" width="50"></td>
+                                    <td style="border-top: none"><img src="../img/teamlogo/LEV.jpg" width="50"></td>
+                                </tr></table></div></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

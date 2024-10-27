@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Highlight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 13px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 226px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1  {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        #item ol {
+            display: block;
+            border: 1px red dotted;
+            width: 90%
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        #item h3 {
+            font-size: 20px;
+            font-family: fantasy;
+            color: navy;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "../ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Highlights</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="../ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="../ars_intro/ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="../ars_intro/ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="../ars_intro/ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="../ars_intro/ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "../ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="../ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="../ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="../ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="../ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="col-2 col-s-2">
+        <div class="sidebar">
+        <ul>
+            <li><a href="#H1"><strong>12-13 시즌</strong></a></li>
+            <li><a href="#H2"><strong>13-14 시즌</strong></a></li>
+            <li><a href="#H3"><strong>14-15 시즌</strong></a></li>
+            <li><a href="#H4"><strong>15-16 시즌</strong></a></li>
+            <li><a href="#H5"><strong>16-17 시즌</strong></a></li>
+            <li><a href="#H6"><strong>17-18 시즌</strong></a></li>
+            <li><a href="#H7"><strong>18-19 시즌</strong></a></li>
+            </ul>
+            </div>
+    </nav>
+    <div id="content">
+            <h1>하이라이트</h1>
+            <hr>
+            <div id="item">
+                <div class="col-9 col-s-12">
+                    <div>
+                    <h3 id="H1">※12-13 시즌</h3>
+                    
+                    <div class="col-9 col-s-12">
+                    <video src="../ars_video/12-13/aes_12-13.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/12-13/12-13_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/12-13/12-13_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/12-13/13-13_3.mp4" controls width="100%"></video></div>
+                    </div>
+                    
+                    <div>
+                    <h3 id="H2">※13-14 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/13-14/Wengerball_13-14.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/13-14/13-14_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/13-14/13-14_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/13-14/13-14_3.mp4" controls width="100%"></video></div>
+                    </div>
+                    
+                    <div>
+                    <h3 id="H3">※14-15 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/14-15/Wengerball_14-15_3.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/14-15/14-15_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/14-15/14-15_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/14-15/14-15.mp4" controls width="100%"></video></div>
+                    </div>
+                
+                    <div>
+                    <h3 id="H4">※15-16 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/15-16/Wengerball_15-16.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/15-16/15-16_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/15-16/15-16_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/15-16/15-16-3.mp4" controls width="100%"></video></div>
+                    </div>
+                
+                    <div>
+                    <h3 id="H5">※16-17 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/16-17/16-17_1.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/16-17/16-17_3.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/16-17/16-17_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/16-17/16-17.mp4" controls width="100%"></video></div>
+                    </div>
+                
+                    <div>
+                    <h3 id="H6">※17-18 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/17-18/Wengerball_17-18.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/17-18/17-18_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/17-18/17-18_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/17-18/17-18_3.mp4" controls width="100%"></video></div>
+                    </div>
+                
+                    <div>
+                    <h3 id="H7">※18-19 시즌</h3>
+                    <div class="col-9 col-s-12" class="sea">
+                    <video src="../ars_video/18-19/18-19.mp4" controls width="100%"></video>
+                    </div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/18-19/18-19_1.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/18-19/18-19_2.mp4" controls width="100%"></video></div>
+                    <div class="col-3 col-s-12" class="sea"><video src="../ars_video/18-19/18-19_3.mp4" controls width="100%"></video></div>
+                    </div>             
+            </div>
+        </div>
+    </div>
+</body>
+</html>

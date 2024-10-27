@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Coaching Staff</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 12px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 76px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        #item ul {
+            display: block;
+            border: 1px red dotted;
+            width: 90%
+        }
+        
+        
+        * {
+            box-sizing: border-box;
+        }
+        #item strong {
+            font-size: 2em;
+        }
+        #item table {
+            width: 100%;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        #item img {
+            width: 100%;
+            height: auto;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Coaching Staff</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="../ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="../ars_intro/ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="../ars_intro/ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="../ars_intro/ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="../ars_intro/ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="../ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/" target="_blank"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="../ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="col-2 col-s-2">
+        <div class="sidebar">
+        <ul>
+            <li><a href="ars_team_coach.html"><strong>감독 및 스태프</strong></a></li>
+            <li><a href="ars_team_player.html"><strong>선수단</strong></a></li>
+        </ul>
+        </div>
+    </nav>
+    <div>
+        <div id="content">
+            <h1>감독 및 스태프</h1>
+            <hr>
+            <div id="item">
+                <table border="1">
+        <tr>
+        <td rowspan="6"><strong>STAFF</strong></td>
+        <td><img src="../img/arsenal_player/STAFF/Unai.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Carcedo.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Bould.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Paulo%20Barreira.PNG"></td>
+        </tr>
+        <tr>
+        <td><img src="../img/arsenal_player/STAFF/Darren%20Burgess.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Shad%20Forsythe.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Julen%20Masach.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Barry%20Solan.PNG"></td>
+        </tr>
+        <tr>
+        <td><img src="../img/arsenal_player/STAFF/Chris%20Morgan.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Paulo%20Barreira.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Jordan%20Reece.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Javi%20Garcia.PNG"></td>
+        </tr>
+        <tr>
+        <td><img src="../img/arsenal_player/STAFF/Sal%20Bibbo.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Gary%20O'Driscoll.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Victor%20Manas.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Ben%20Knapper.PNG"></td>
+        </tr>
+        <tr>
+        <td><img src="../img/arsenal_player/STAFF/Mikhail%20Zhilkin.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Takahiro%20Yamamoto.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Darren%20Page.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Paul%20Akers.PNG"></td>
+        </tr>
+        <tr>
+        <td><img src="../img/arsenal_player/STAFF/Will%20Jones.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Mark%20Curtis.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Tom%20Allen.PNG"></td>
+        <td><img src="../img/arsenal_player/STAFF/Richard%20Allison.PNG"></td>
+        </tr>
+        </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

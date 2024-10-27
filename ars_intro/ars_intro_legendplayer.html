@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARSENAL FC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 13px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 136px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        #item ul {
+            display: block;
+            border: 1px red dotted;
+            width: 90%
+        }
+        #item ul a {
+            text-decoration: none;
+            color: black;
+        }
+        table {
+            border-color: red;
+        }
+        #thead {
+            font-size: 20px;
+        }
+        #career, #edu, #awa {
+            text-align: center;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "../ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Legend Player</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="../ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "../ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="../ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="../ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="../ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="../ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="col-2 col-s-2">
+        <div class="sidebar">
+        <ul>
+            <li><a href="ars_intro_history.html"><strong>구단역사</strong></a></li>
+            <li><a href="ars_intro_coach.html"><strong>역대감독</strong></a></li>
+            <li><a href="ars_intro_legendplayer.html"><strong>레전드 선수</strong></a></li>
+            <li><a href="ars_intro_homeground.html"><strong>홈구장</strong></a></li>
+        </ul>
+        </div>
+    </nav>
+    <div>
+    <div id="content">
+        
+            <h1>레전드 선수</h1>
+            <hr>
+            <div id="item">
+                <ul>
+                    <li><a href="#Thierry Henry"><b><i>Thierry Henry (티에리 앙리)</i></b></a></li>
+                    <li><a href="#Dennis Bergkamp"><b><i>Dennis Bergkamp (데니스 베르캄프)</i></b></a></li>
+                    <li><a href="#Ian Wright"><b><i>Ian Wright (이안라이트)</i></b></a></li>
+                    <li><a href="#Tony Adams"><b><i>Tony Adams (토니 아담스)</i></b></a></li>
+                    <li><a href="#Tomas Rosicky"><b><i>Tomas Rosicky (토마스 로시츠키)</i></b></a></li>
+                </ul>
+                <div class="col-9 col-s-12">
+                    <div id="Thierry Henry">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">1999~2007시즌</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="9"><img src="../img/Thierry%20Henry.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2018.10~2019.01</strong></td>
+                                <td>AS 모나코 FC (모나코) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016.08~2018.10</strong></td>
+                                <td>벨기에 축구 국가대표팀 수석코치</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2012.01~2012.02</strong></td>
+                                <td>아스날 FC (잉글랜드) 임대</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2010.07~2015.01</strong></td>
+                                <td>뉴욕 레드불스 (미국)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2010</strong></td>
+                                <td>제 19회 남아프리카공화국 월드컵 프랑스 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2008</strong></td>
+                                <td>UEFA 유럽축구선수권대회 프랑스 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2007.07~2010.07</strong></td>
+                                <td>FC 바르셀로나 (스페인)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006</strong></td>
+                                <td>제 18회 독일 월드컵 프랑스 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" style="background-color: pink"><b>선수</b></td>
+                                <td rowspan="5">티에리 앙리 (Thierry Henry)</td>
+                                <td><strong>2002</strong></td>
+                                <td>제 17회 한일 월드컵 프랑스 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999.08~2007.07</strong></td>
+                                <td>아스날 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999.01~1999.08</strong></td>
+                                <td>유벤투스 FC (이탈리아)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>제 16회 프랑스 월드컵 프랑스 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1994.07~1999.01</strong></td>
+                                <td>AS 모나코 FC (모나코)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="4">1977.08.17 / 프랑스</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006</strong></td>
+                                <td>프랑스풋볼 올해의 선수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006</strong></td>
+                                <td>FWA선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006</strong></td>
+                                <td>잉글랜드 프리미어리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="4">43세 (만 41세) 사자자리 뱀띠</td>
+                                <td><strong>2005</strong></td>
+                                <td>잉글랜드 프리미어리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2005</strong></td>
+                                <td>유럽 골든슈</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2005</strong></td>
+                                <td>프랑스풋볼 올해의 선수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>프랑스풋볼 올해의 선수상</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="4">188cm / 83kg</td>
+                                <td><strong>2004</strong></td>
+                                <td>잉글랜드 프리미어리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>잉글랜드 프로축구선수협회 선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>FWA선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2003</strong></td>
+                                <td>프랑스풋볼 올해의 선수상</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>데뷔</b></td>
+                                <td rowspan="4">1994년 AS모나코 FC 입단</td>
+                                <td><strong>2003</strong></td>
+                                <td>FWA선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002</strong></td>
+                                <td>잉글랜드 프리미어리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2000</strong></td>
+                                <td>프랑스풋볼 올해의 선수상</td></tr>
+                        </table>
+                    </div>
+                        
+                        <div id="Dennis Bergkamp">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">1995~2006시즌</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="9"><img src="../img/Dennis%20Bergkamp.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2011.07 ~ 2017.12</strong></td>
+                                <td>AFC 아약스 (네덜란드) 코치</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2007</strong></td>
+                                <td>잉글랜드축구 명예의 전당 입성</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>제16회 프랑스 월드컵 네덜란드 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1995.07 ~ 2006</strong></td>
+                                <td>아스날 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1994</strong></td>
+                                <td>제15회 미국 월드컵 네덜란드 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1993.07 ~ 1995</strong></td>
+                                <td>인터 밀란 (이탈리아)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1990 ~ 2000</strong></td>
+                                <td>네덜란드 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1987.01 ~ 1993</strong></td>
+                                <td>AFC 아약스 (네덜란드)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: pink"><b>선수</b></td>
+                                <td>데니스 베르캄프 (Dennis Bergkamp)</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="4">1969.5.10 / 네덜란드</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>FWA선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>PFA선정 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1993</strong></td>
+                                <td>네덜란드리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="1" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="1">51세 (만 50세) 황소자리 닭띠</td>
+                                <td><strong>1993</strong></td>
+                                <td>네덜란드 올해의 선수</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="3">188cm / 78kg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1992</strong></td>
+                                <td>네덜란드리그 득점왕</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1992</strong></td>
+                                <td>네덜란드 올해의 선수</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>데뷔</b></td>
+                                <td rowspan="2">1987년 AFC 아약스 입단</td>
+                                <tr>
+                                <td><strong>1991</strong></td>
+                                <td>네덜란드리그 득점왕</td>
+                            </tr>
+                            </table>
+                    </div>
+                    <div id="Ian Wright">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">1991~1998시즌</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="7"><img src="../img/Ian%20Wright.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2000.02 ~ 2000.07</strong></td>
+                                <td>번리 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999.10 ~ 2000</strong></td>
+                                <td>셀틱 FC (스코틀랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999.08 ~ 1999.10</strong></td>
+                                <td>노팅엄 포레스트 FC (잉글랜드) 임대</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998.07 ~ 1999</strong></td>
+                                <td>웨스트햄 유나이티드 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1991.09 ~ 1998</strong></td>
+                                <td>아스널 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1985.08 ~ 1991</strong></td>
+                                <td>크리스탈 팰리스 FC (잉글랜드)</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="1" style="background-color: pink"><b>선수</b></td>
+                                <td rowspan="1">이안 라이트 (Ian Wright)</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="4">1963.11.3 / 영국</td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>1991-92</strong></td>
+                                <td>1부리그 골든부츠 수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1989-90</strong></td>
+                                <td>1부리그 올해의 골 선정</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1989</strong></td>
+                                <td>크리스탈 팰리스 올해의 선수 선정</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="4">57세 (만 55세) 전갈자리 토끼띠</td>
+                                <td><strong>1988-89</strong></td>
+                                <td>2부리그 올해의 팀 선정</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1992-93</strong></td>
+                                <td>프리미어리그 올해의 팀 선정</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1996-97</strong></td>
+                                <td>프리미어리그 올해의 팀 선정</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1996.11</strong></td>
+                                <td>프리미어리그 이달의 선수 선정</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="2">175cm / 78kg</td>
+                                <td><strong>2000</strong></td>
+                                <td>대영제국 훈장 5등급(MBE) 수훈</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2005</strong></td>
+                                <td>잉글랜드 축구 명예의 전당에 헌액</td>
+                            </tr>
+                            
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>데뷔</b></td>
+                                <td rowspan="2">1985년 크리스탈 팰리스 입단</td>
+                                <tr>
+                                <td><strong>2005</strong></td>
+                                <td>크리스탈 팰리스 20세기 베스트 11에 선정</td>
+                            </tr>
+                        </table>
+                    </div>
+                        <div id="Tony Adams">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">1983 ~2002시즌</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="7"><img src="../img/Tony%20Adams.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2017.04 ~ 2017.06</strong></td>
+                                <td>그라나다 CF (스페인) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2010.05 ~ 2011.11</strong></td>
+                                <td>가발라 FC (아제르바이잔) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2008.10 ~ 2009.02</strong></td>
+                                <td>포츠머스 FC (잉글랜드) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006.07 ~ 2008.10</strong></td>
+                                <td>포츠머스 FC (잉글랜드) 코치</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2003.11 ~ 2004.11</strong></td>
+                                <td>위컴 원더러스 FC (잉글랜드) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>제16회 프랑스월드컵 잉글랜드 국가대표</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" style="background-color: pink"><b>선수</b></td>
+                                <td rowspan="3">토니 아담스 (Tony Adams)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1990</strong></td>
+                                <td>제14회 이탈리아월드컵 잉글랜드 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1983.07 ~ 2002</strong></td>
+                                <td>아스날 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="3">1966.10.10 / 영국</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1987</strong></td>
+                                <td>영국 축구선수협회 선정 올해의 영플레이어상 수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1994</strong></td>
+                                <td>영국 축구선수협회 올해의 베스트 11포함</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="2">54세 (만 52세) 천칭자리 말띠</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1996</strong></td>
+                                <td>영국 축구선수협회 올해의 베스트 11포함</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td rowspan="1" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="1">193cm / 88kg</td>
+                                <td><strong>1997</strong></td>
+                                <td>영국 축구선수협회 올해의 베스트 11포함</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>데뷔</b></td>
+                                <td rowspan="2">1983년 아스날소속 데뷔</td>
+                                <tr>
+                                <td><strong>1999</strong></td>
+                                <td>대영제국 훈장 5등급(MBE) 수훈</td>
+                            </tr>
+                            </table>
+                    </div>
+                        <div id="Tomas Rosicky">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">2006~2016시즌</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="7"><img src="../img/Tomas%20Rosicky.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016.08 ~ 2017.12</strong></td>
+                                <td>AC 스파르타 프라하 (체코)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006</strong></td>
+                                <td>제18회 독일 월드컵 체코 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006.07 ~ 2016.08</strong></td>
+                                <td>아스날 FC (잉글랜드)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>제12회 유럽축구선수권대회 체코 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2001.01 ~ 2006.07</strong></td>
+                                <td>보루시아 도르트문트 (독일)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2000</strong></td>
+                                <td>제11회 유럽축구선수권대회 체코 국가대표</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>선수</b></td>
+                                <td rowspan="2">토마스 로시츠키 (Tomas Rosicky)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998.07 ~ 2001.01</strong></td>
+                                <td>AC 스파르타 프라하 (체코)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="3">1980.10.4 / 체코</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999</strong></td>
+                                <td>체코 올해의 유망주상 수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2001</strong></td>
+                                <td>체코 최연소 올해의 선수상 수상</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="3">40세 (만 38세) 천칭자리 원숭이띠</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002</strong></td>
+                                <td>체코 최연 올해의 선수상 수상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002</strong></td>
+                                <td>체코 골든볼 수상</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="1" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="1">179cm / 72kg</td>
+                                <td><strong>2006</strong></td>
+                                <td>체코 올해의 선수상 수상</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="background-color: pink"><b>데뷔</b></td>
+                                <td rowspan="2">1998년 AC 스파르타 프라하 입단</td>
+                                <tr>
+                                <td><strong>2006</strong></td>
+                                <td>FIFA 월드컵 맨 오브 더 매치 수상</td>
+                            </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

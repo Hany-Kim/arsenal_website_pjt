@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 13px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 76px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1  {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        #item ol {
+            display: block;
+            border: 1px red dotted;
+            width: 90%
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        table {
+            border-color: red;
+        }
+        #thead {
+            font-size: 20px;
+        }
+        #career, #edu, #awa {
+            text-align: center;
+        }
+        td {
+            font-size: 20px;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "../ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Map</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="../ars_intro/ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="../ars_intro/ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="../ars_intro/ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="../ars_intro/ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="../ars_intro/ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "../ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="../ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="../ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="../ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+            <h1>찾아 오는길</h1>
+            <hr>
+            <div id="item">
+                <div class="col-9 col-s12">
+                <table border="1">
+      
+          <tr>
+              <td><img src="../img/direction/Piccadilly_Line.PNG" width="100%"></td>
+          </tr>
+            <td>런던지하철의 Piccadilly line을 타고 ★표의 Arsenal역에서 하차합니다.</td>
+          <tr>
+              <td><img src="../img/direction/arsenal_station_inside.PNG" width="100%"></td>
+          </tr><td>Arsenal역에서 하차하여 사진에 보이는 Way out을 따라 밖으로 나갑니다.</td>
+          <tr>
+              <td><img src="../img/direction/arsenal_station.png" width="100%"></td>
+          </tr>
+          <td>현재위치는 빨간색 테두리 부분입니다. 남쪽으로 조금만 걸어가면 Emirates Stadium에 도착합니다.</td>
+         <tr>
+            <td><img src="../img/direction/arsenal_station_outside.PNG" width="100%"></td>
+          </tr>
+          <td>Arsenal역에서 밖으로 나와, 나온기준으로 오른쪽, 사진에 화살표 방향으로 출발합니다. </td>
+          <tr>
+          <td><img src="../img/direction/arsenal_street.PNG" width="100%"></td>
+          </tr>
+          <td>Arsenal역에서 화살표방향을 따라 약70m 걷다보면 좌회전하는 길이 나옵니다. 길따라 좌회전을 해줍니다. <br>매치데이가되면 길가에서 파는 핫도그와 응원용품을 구매할 수 있습니다.</td>
+          <tr>
+          <td><img src="../img/direction/arsenal_street2.PNG" width="100%"></td>
+          </tr>
+          <td>전 사진에서 좌회전을 하면 앞에 ★표 표시를 해둔 큰 파란색 건물이 나옵니다. 그 건물 앞까지 쭉 직진합니다.</td>
+          <tr>
+          <td><img src="../img/direction/arsenal_street3.PNG" width="100%"></td>
+          </tr>
+          <td>건물앞에 도착하면, 계단을 두번올라가 앞에보이는 다리를 건넙니다.<br>매치데이날엔 경찰들을 통해 소지품 검사를 해야만 다리를 건널수 있습니다.</td>
+          <tr>
+          <td><img src="../img/direction/ESstadium_front.PNG" width="100%"></td>
+          </tr>
+          <td>다리를 따라 화살표 방향으로 쭉 건너왔습니다. 건너오자마자 좌측을 봅니다.</td>
+          <tr>
+          <td><img src="../img/direction/ESstadium_front2.jpg" width="100%"></td>
+          </tr>
+          <td>도착했습니다!<br>
+              바로 눈앞에 웅장한 EmirateStadium이 보입니다!</td>
+                </table>
+        </div>
+    </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Coach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        .header {
+            width: 100%; height: 10%;
+        }
+        h1 {
+            background: red;
+            margin: 0;
+            color: floralwhite;
+        }
+        h1 strong {
+            font-size: 60px;
+            font-family: serif;
+        }
+        .navbar {
+            width: 100%; height: 5.4%;
+            background: red;
+            margin: 0; padding: 0;
+            list-style: none;
+            float: left;
+        }
+        .navbar>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 7px 7px;
+            color: white;
+            width: 100%; height: 40px;
+        }
+        .navbar li {
+            display: inline;
+            width: 13.6%; height: 40px;
+            background: red;
+            font-size: 13px;
+            float: left;
+            position: relative;
+            list-style: none;
+            margin: 0; padding: 0;
+        }
+        .navbar li li {
+            width: 100%;
+            font-size: 10px;
+            background: #EB1C22;
+        }
+        li li>a {
+            width: 100%; height: 100%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 900;
+        }
+        .navbar>li>a:hover {
+            background: white;
+            color: red;
+        }
+        .navbar ul {
+            left: 0;
+            top: 100%;
+            background: #EB1C22;
+            display: none;
+            margin: 0; padding: 0;
+        }
+        .navbar>li:hover > ul {
+            display: block;
+        }
+        li li>a:hover {
+            background: #970214;
+        }
+        .sidebar>ul {
+            width: 15%; height: 5.4%;
+            margin-top: 200px; margin-left: 0; padding: 0;
+            list-style: none;
+            position: fixed;
+        }
+        .sidebar>ul>li {
+            display: block;
+            width: 100%; height: 30px;
+            background: #EB1C22;
+            font-size: 13px;
+        }
+        .sidebar>ul>li>a {
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 7px 7px;
+            width: 100%; height: 50px;
+        }
+        .sidebar>ul {
+            border: 8px outset #EB1C22;
+            height: 136px;
+        }
+        .sidebar li:hover {
+            background: #971215;
+        }
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1 a {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #content h1{
+            margin: 5px;
+            margin-top: 40px;
+            background: white;
+            float: right;
+            width: 80%;
+            color: black;
+        }
+        #content h1  {
+            text-decoration: none;
+            color: red;
+            text-shadow: 3px 3px pink;
+        }
+        #content hr{
+            float: right;
+            width: 82%;
+        }
+        #content #item {
+            float: right;
+            width: 80%;
+        }
+        #item h2 {
+            color: red;
+            text-shadow: 3px 3px pink;
+            font-size: 30px;
+        }
+        #item ol {
+            display: block;
+            border: 1px red dotted;
+            width: 90%;
+            font-size: 15px;
+        }
+        #item ol a {
+            text-decoration: none;
+            color:black;
+        }
+        
+        #content {
+            font-family:monospace;
+        }
+        
+        table {
+            border-color: red;
+        }
+        #thead {
+            font-size: 20px;
+        }
+        #career, #edu, #awa {
+            text-align: center;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 0px;
+        }
+        
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href = "../ars_main.html"><img src="../img/teamlogo/ars_teamlogo.jpg" width="80" height="70"></a><strong>Coachs</strong></h1>
+    </header>
+    <nav class="col-12 col-s-12">
+        <ul class="navbar">
+            <li id="intro"><a href ="ars_intro_history.html"><strong>구단소개</strong></a>
+                <ul>
+                    <li><a href="ars_intro_history.html"><br>구단역사</a></li>
+                    <li><a href="ars_intro_coach.html"><br>역대감독</a></li>
+                    <li><a href="ars_intro_legendplayer.html"><br>레전드 선수</a></li>
+                    <li><a href="ars_intro_homeground.html"><br>홈구장</a></li>
+                </ul>
+            </li>
+            <li><a href = "../ars_team/ars_team_coach.html"><strong>팀</strong></a>
+                <ul>
+                    <li><a href="../ars_team/ars_team_coach.html"><br>감독 및 스태프</a></li>
+                    <li><a href="../ars_team/ars_team_player.html"><br>선수단</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_match/ars_match_ranking.html"><strong>경기</strong></a>
+                <ul>
+                    <li><a href="../ars_match/ars_match_ranking.html"><br>구단순위</a></li>
+                    <li><a href="https://www.arsenal.com/fixture/arsenal/2019-jul-06/boreham-wood#!match-news" target="_blank"><br>다음경기</a></li>
+                    <li><a href="https://sports.news.naver.com/sports/new/live/index.nhn?category=worldfootball&gameId=2019053051018194243" target="_blank"><br>지난경기</a></li>
+                    <li><a href="https://www.eticketing.co.uk/arsenal/"><br>티케팅</a></li>
+                </ul>
+            </li>
+            <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><strong>쇼핑</strong></a>
+                <ul>
+                    <li><a href="https://arsenaldirect.arsenal.com/Offers/c/offers" target=_blank><br>행사</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/Arsenal-Retro-%26-Heritage/c/mens-retro" target=_blank><br>레트로 킷</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Mens/c/mens" target=_blank><br>MENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Womens/c/womens" target=_blank><br>WOMENS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Kids/c/kids" target=_blank><br>KIDS</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Gifts/c/gifts" target=_blank><br>선물 용품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/Memorabilia/c/memorabilia" target=_blank><br>기념품</a></li>
+                    <li><a href="https://arsenaldirect.arsenal.com/tour/homel" target=_blank><br>스타디움 투어</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.arsenal.com/news" target="_blank"><strong>구단뉴스</strong></a>
+                <ul>
+                    <li><a href="https://www.arsenal.com/news" target="_blank"><br>공식홈페이지</a></li>
+                    <li><a href="https://cafe.naver.com/arsnl" target="_blank"><br>ARSENALISH</a></li>
+                    <li><a href="http://www.arsenal.co.kr/" target="_blank"><br>아스날코리아</a></li>
+                </ul>
+            </li>
+            <li><a href="../ars_highlight/ars_highlight_highlight.html"><strong>하이라이트</strong></a>
+            </li>
+            <li><a href="../ars_map/ars_map_map.html"><strong>찾아오는 길</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="col-2 col-s-2">
+        <div class="sidebar">
+        <ul>
+            <li><a href="ars_intro_history.html"><strong>구단역사</strong></a></li>
+            <li><a href="ars_intro_coach.html"><strong>역대감독</strong></a></li>
+            <li><a href="ars_intro_legendplayer.html"><strong>레전드 선수</strong></a></li>
+            <li><a href="ars_intro_homeground.html"><strong>홈구장</strong></a></li>
+        </ul>
+        </div>
+    </nav>
+    <div>
+        <div id="content">
+            <h1>역대감독</h1>
+            <hr>
+            <div id="item">
+                <ol type="1">
+                    <li><a href="#Chapman"><b><i>Herbert Chapmon (허버트 채프먼)</i></b></a></li>
+                    <li><a href="#arsen"><b><i>Arsen Wenger (아르센 벵거)</i></b></a></li>
+                    <li><a href="#unai"><b><i>Unai emery (우나이 에메리)</i></b></a></li>
+                </ol>
+                <div class="col-9 col-s-12">
+                    <div id="Chapman">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">아르센 벵거 이전 아스날 FC의 전성기를 이끈 역사상 최고의 감독</th>
+                                 <tr>
+                                <td colspan="2" rowspan="18"><img src="../img/Chapman.jpg" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1925~1934</strong></td>
+                                <td>아스날 FC (잉글랜드) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1921~1925</strong></td>
+                                <td>허더즈필드 타운 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1912~1918</strong></td>
+                                <td>리즈 시티 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1907~1912<br>(1909년까지는 플레잉 감독)</strong></td>
+                                <td>노샘프턴 타운 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1905~1907</strong></td>
+                                <td>토트넘 핫스퍼</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1903~1905</strong></td>
+                                <td>노츠 카운티</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1902~1903</strong></td>
+                                <td>셰필드 유나이티드</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1901~1902/<br>1904~1905(임대)/<br>1907~1909</strong></td>
+                                <td>노샘프턴 타운</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1900~1901</strong></td>
+                                <td>워크샵 타운</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1899~1900</strong></td>
+                                <td>셰피 유나이티드</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1899</strong></td>
+                                <td>스윈던 타운</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1898~1899</strong></td>
+                                <td>그림즈비 타운</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1897~1898</strong></td>
+                                <td>로치데일 AFC</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1897</strong></td>
+                                <td>스탤리브리지 로버스</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1895~1897</strong></td>
+                                <td>애슈턴 노스 엔드</td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2" style="background-color: indianred" id="edu"><b>학력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</strong></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" style="background-color: pink"><b>감독</b></td>
+                                <td rowspan="5">허버트 채프먼 (Herbert Chapman)</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1908/09</strong></td>
+                                <td>남부 리그 우승<br> (노샘프턴 타운)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1921/22</strong></td>
+                                <td>FA컵 우승<br> (허더스필드 타운)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1923/24</strong></td>
+                                <td>1부리그 우승<br> (허더스필드 타운)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1924/25</strong></td>
+                                <td>1부리그 우승<br> (허더스필드 타운)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생 / 사망</b></td>
+                                <td rowspan="4">1878.1.19 ~ 1934.1.6 (만 55세)</td>
+                                </tr>
+                            <tr>
+                                <td><strong>1929/30</strong></td>
+                                <td>FA컵 우승<br> (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1930/31</strong></td>
+                                <td>1부리그 우승<br> (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1932/33</strong></td>
+                                <td>1부리그 우승<br> (아스날 FC)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                    <div class="col-9 col-s-12">
+                    <div id="arsen">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">22년간 아스날을 이끈 감독</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="9"><img src="../img/Wenger_stadium.PNG" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1996.10~2018.05</strong></td>
+                                <td>아스날 FC (잉글랜드) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1995.07~1996.09</strong></td>
+                                <td>나고야 그램퍼스 8 (일본)감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1987.07~1995.04</strong></td>
+                                <td>AS 모나코 FC (모나코)감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1984.07~1987.06</strong></td>
+                                <td>AS 낭시 로렌 (프랑스)감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1981.07~1982.06</strong></td>
+                                <td>RC 스트라스부르 (프랑스)유소년팀 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1978~1981</strong></td>
+                                <td>RC 스트라스부르(프랑스)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="background-color: indianred" id="edu"><b>학력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>~1971</strong></td>
+                                <td>스트라스부르제2대학교대학원 경제학 석사<br>스트라스부르제2대학교 학사</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" style="background-color: pink"><b>감독</b></td>
+                                <td rowspan="5">아르센 벵거 (Arsene Wenger)</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2014</strong></td>
+                                <td>FA컵 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2005</strong></td>
+                                <td>FA컵 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>프리미어 리그 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2004</strong></td>
+                                <td>FA 커뮤니티실드 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="4">1949.10.22 / 프랑스</td>
+                                <td><strong>2003</strong></td>
+                                <td>대영 제국 훈장 (OBE)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2003</strong></td>
+                                <td>FA컵 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002</strong></td>
+                                <td>FA컵 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002</strong></td>
+                                <td>프리미어 리그 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="4">71세 (만 69세) 천칭자리 소띠</td>
+                                <td><strong>2002</strong></td>
+                                <td>FA커뮤니티실드 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1999</strong></td>
+                                <td>FA커뮤니티실드 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>FA커뮤니티실드 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1998</strong></td>
+                                <td>FA컵 우승 (아스날 FC)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="4">191cm</td>
+                                <td><strong>1998</strong></td>
+                                <td>프리미어 리그 우승 (아스날FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1995</strong></td>
+                                <td>J리그 최우수감독상</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1991</strong></td>
+                                <td>프랑스컵 우승 (AS 모나코)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1988</strong></td>
+                                <td>프랑스 리그 우승 (AS 모나코)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                <div class="col-9 col-s-12">
+                    <div id="unai">
+                        <table border="1">
+                            <tr>
+                                <th id="thead" colspan="4" style="background-color: pink">현재 감독</th>
+                                 <tr>
+                                <td colspan="2" rowspan="13"><img src="../img/Unai_stadium.PNG" width="100%"></td>
+                                <td colspan="2" style="background-color: indianred" id="career"><b>경력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2018.05~</strong></td>
+                                <td>아스날 FC (잉글랜드) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016.06~2018</strong></td>
+                                <td>파리 생제르맹 FC (프랑스) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2013.01 ~ 2016.06</strong></td>
+                                <td>세비야 FC (스페인) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2012.07 ~ 2012.11</strong></td>
+                                <td>FC 스파르타크 모스크바 (러시아) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2008.07 ~ 2012.06</strong></td>
+                                <td>발렌시아 CF (스페인) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006.07 ~ 2008.06</strong></td>
+                                <td>UD 알메리아 (스페인) 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2002.07 ~ 2003</strong></td>
+                                <td>CD 레가네스 (스페인)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2000.07 ~ 2002</strong></td>
+                                <td>라싱 페롤 (스페인)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1996.07 ~ 2000</strong></td>
+                                <td>CD 톨레도 (스페인)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1990 ~ 1996</strong></td>
+                                <td>레알 소시에다드 (스페인)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="background-color: indianred" id="edu"><b>학력사항</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</strong></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" style="background-color: pink"><b>감독</b></td>
+                                <td rowspan="5">우나이 에메리 (Unai Emery)</td>
+                                <td colspan="2" style="background-color: indianred" id="awa"><b>수상내역</b></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2013/14</strong></td>
+                                <td>UEFA 유로파 리그 우승 (세비야 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2014/15</strong></td>
+                                <td>UEFA 유로파 리그 우승 (세비야 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2015/16</strong></td>
+                                <td>UEFA 유로파 리그 우승 (세비야 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2017/18</strong></td>
+                                <td>리그 앙 우승 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>출생</b></td>
+                                <td rowspan="4">1971.11.3 / 스페인</td>
+                                </tr>
+                            <tr>
+                                <td><strong>2016/17</strong></td>
+                                <td>리그 앙 우승 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016/17</strong></td>
+                                <td>쿠프 드 라 리그 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2017/18</strong></td>
+                                <td>쿠프 드 라 리그 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" style="background-color: pink"><b>나이</b></td>
+                                <td rowspan="4">49세 (만 47세) 전갈자리 돼지띠</td>
+                                <tr>
+                                <td><strong>2016/17</strong></td>
+                                <td>쿠프 드 프랑스 (파리 생제르맹 FC)</td>
+                            <tr>
+                                <td><strong>2017/18</strong></td>
+                                <td>쿠프 드 프랑스 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016</strong></td>
+                                <td>트로페 데 샹피옹 (파리 생제르맹 FC)</td>
+                            </tr>
+                                <td rowspan="6" style="background-color: pink"><b>신체</b></td>
+                                <td rowspan="6">178cm</td>
+                                <tr>
+                                <td><strong>2017</strong></td>
+                                <td>트로페 데 샹피옹 (파리 생제르맹 FC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2005/06</strong></td>
+                                <td>미겔 무뇨스 트로피 (세군다리가)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2006/07</strong></td>
+                                <td>미겔 무뇨스 트로피 (세군다리가)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2014년 3월</strong></td>
+                                <td>라 리가 이달의 감독</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2015년 1월</strong></td>
+                                <td>라 리가 이달의 감독</td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
